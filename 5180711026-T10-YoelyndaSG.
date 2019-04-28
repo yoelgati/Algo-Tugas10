@@ -1,0 +1,131 @@
+#include<iostream>
+#include<stdlib.h>
+using namespace::std;
+
+struct mhs{
+int nim;
+string nama;
+float nilai;
+
+};
+
+mhs mahasiswa[50];
+
+int jmldata,i,b,n;
+string cari;
+mhs temp;
+main()
+
+{
+
+cout<<"*********SELAMAT DATANG**********";cout<<endl;
+cout<<"masukkan jumlah data="; cin>>jmldata;
+for(i=0;i<jmldata;i++)
+
+{
+
+    cout<<"data ke-"<<i<<"=";cout<<endl;
+    cout<<"masukkan nama:";cin>>mahasiswa[i].nama;cout<<endl;
+    cout<<"masukkan nim:";cin>>mahasiswa[i].nim;cout<<endl;
+
+
+
+}
+
+for(i=0;i<jmldata;i++)
+
+{
+
+    cout<<"********************************";cout<<endl;
+    cout<<"data ke:["<<i+1<<"]";cout<<endl;
+    cout<<"nama:"<<mahasiswa[i].nama;cout<<endl;
+    cout<<"nim:"<<mahasiswa[i].nim;cout<<endl;
+
+}
+
+for(i=0;i<jmldata;i++)
+
+{
+
+    system("cls");
+   for(b=0;b<jmldata-1;b++)
+
+   {
+       if(mahasiswa[b].nim>mahasiswa[b+1].nim)
+       {
+
+           temp.nim=mahasiswa[b].nim;
+           mahasiswa[b].nim=mahasiswa[b+1].nim;
+           mahasiswa[b+1].nim=temp.nim;
+           temp.nama=mahasiswa[b].nama;
+           mahasiswa[b].nama=mahasiswa[b+1].nama;
+           mahasiswa[b+1].nama=temp.nama;
+
+
+       }
+
+   }
+
+}
+
+cout<<"setelah data di sorting";cout<<endl;
+
+for(b=0;b<jmldata;b++)
+
+{
+
+      cout<<"********************************";cout<<endl;
+      cout<<"nama:"<<mahasiswa[b].nama;cout<<endl;
+    cout<<"nim:"<<mahasiswa[b].nim;cout<<endl;
+
+}
+
+cout<<"masukkan nama yang dicari    :";cin>>cari;cout<<endl;
+
+n=0;
+    cout<<"********************************";cout<<endl;
+ cout<<"data ke-";
+ for(b=0;b<jmldata;b++)
+{
+
+   if(mahasiswa[b].nama==cari)
+
+   {
+       n=1;
+       cout<<b<<endl;
+   }
+}
+if (n==0)
+
+{
+    cout<<"data tidak ditemukan";cout<<endl;
+}
+
+
+cout<<"********************************";cout<<endl;
+cout<<"masukkan NIM yang akan dihapus:";cin>>mahasiswa[b].nim;cout<<endl;
+for(int j=0;j<jmldata;j++){
+
+    if(mahasiswa[b].nim==mahasiswa[j].nim){
+        for(int k=j;k<jmldata;k++){
+            mahasiswa[k].nim=mahasiswa[k+1].nim;
+        }
+        jmldata-=1;
+        break;
+    }
+}
+cout<<"Sisa NIM :";
+for(int p=0;p<jmldata;p++){
+    cout<<mahasiswa[p].nim;
+}
+
+
+
+
+
+
+
+
+}
+
+
